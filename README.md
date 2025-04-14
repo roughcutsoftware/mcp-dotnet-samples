@@ -1,14 +1,40 @@
-# Project
+# Model Context Protocol .NET Samples
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+[![Azure AI Community Discord](https://dcbadge.vercel.app/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
-As the maintainer of this project, please make a few updates:
+## 🚀 Introduction
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+Welcome to the Model Context Protocol (MCP) .NET Samples repository! This collection of samples demonstrates how to leverage the Model Context Protocol in .NET applications.
+
+MCP is an open protocol that standardizes how applications provide context to Large Language Models (LLMs). Think of MCP like a USB-C port for AI applications - it provides a standardized way to connect AI models to different data sources and tools.
+
+With MCP, you can:
+- Utilize pre-built integrations that your LLM can directly plug into
+- Flexibly switch between LLM providers and vendors
+- Follow best practices for securing your data within your infrastructure
+- Build agents and complex workflows on top of LLMs
+
+This repository contains .NET samples ranging from building your own MCP implementation to integrating with Azure services.
+
+## 📋 Sample Projects
+
+| Sample Name | Description |
+|-------------|-------------|
+| *Coming soon!* | |
+
+## 🛠️ Getting Started
+
+Details on how to set up and run the samples will be provided in each sample's directory.
+
+## 📚 Learning Resources
+
+- [MCP Official Documentation](https://modelcontextprotocol.io/)
+- [MCP GitHub Repository](https://github.com/anthropics/model-context-protocol)
+
+## 🚶‍♀️ Next Steps
+
+- [Learn more about GenAI with .NET with a free course!](https://aka.ms/genainet)
+- [Join the Azure AI Community Discord to keep the conversation going](https://discord.com/invite/ByRwuEEgH4)
 
 ## Contributing
 
