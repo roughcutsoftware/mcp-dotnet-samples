@@ -1,6 +1,6 @@
-# MCP Server: Youtube Subtitles Extractor
+# MCP Server: Youtube Subtitles Extractor on Azure Functions
 
-This is an MCP server that extracts subtitles from a given YouTube link.
+This is an MCP server, hosted on [Azure Functions](https://learn.microsoft.com/azure/azure-functions/functions-overview), that extracts subtitles from a given YouTube link.
 
 ## Prerequisites
 
