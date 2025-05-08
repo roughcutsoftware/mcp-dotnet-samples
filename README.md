@@ -20,7 +20,8 @@ This repository contains .NET samples ranging from building your own MCP impleme
 
 | Sample Name | Description |
 |-------------|-------------|
-| [YouTube Subtitles Extractor](./youtube-subtitles-extractor/) | A remote MCP server that can extract subtitles from any given YouTube video's URL. |
+| [To-do List](./todo-list/) | A remote MCP server that manages to-do list items. |
+| [YouTube Subtitles Extractor](./youtube-subtitles-extractor/) | A remote MCP server that extracts subtitles from any given YouTube video's URL. |
 
 ## 🛠️ Getting Started
 
