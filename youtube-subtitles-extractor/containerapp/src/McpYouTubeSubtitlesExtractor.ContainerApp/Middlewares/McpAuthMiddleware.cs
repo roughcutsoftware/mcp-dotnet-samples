@@ -28,9 +28,8 @@ public class McpAuthMiddleware(RequestDelegate next, IConfiguration config)
 
         if (string.IsNullOrWhiteSpace(this._expectedApiKey) == true)
         {
-            context.Response.StatusCode = StatusCodes.Status400BadRequest;
+            context.Response.StatusCode = StatusCodes.Status500InternalServerError;
             await context.Response.WriteAsync("API key not set.");
-            await this._next(context);
             return;
         }
 
@@ -39,14 +38,12 @@ public class McpAuthMiddleware(RequestDelegate next, IConfiguration config)
         {
             context.Response.StatusCode = StatusCodes.Status400BadRequest;
             await context.Response.WriteAsync("API key not found.");
-            await this._next(context);
             return;
         }
         if (string.Equals(apiKey, this._expectedApiKey, StringComparison.InvariantCultureIgnoreCase) == false)
         {
             context.Response.StatusCode = StatusCodes.Status401Unauthorized;
             await context.Response.WriteAsync("Invalid API key.");
-            await this._next(context);
             return;
         }
 
