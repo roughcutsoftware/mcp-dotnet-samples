@@ -1,0 +1,16 @@
+{
+  "servers": {
+    "mcp-md2html-stdio-container": {
+      "type": "stdio",
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "mcp-md2html-stdio:latest",
+        "-tc",
+        "-p"
+      ]
+    }
+  }
+}
