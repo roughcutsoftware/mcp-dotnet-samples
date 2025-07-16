@@ -7,6 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   build-and-push-image:
@@ -33,44 +34,61 @@ jobs:
         id: meta-markdown-to-html
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/markdown-to-html
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/markdown-to-html
 
-      - name: Build and push Docker image - markdown-to-html
-        id: push-markdown-to-html
+      - name: Build and push Docker image - markdown-to-html - stdio
+        id: push-markdown-to-html-stdio
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          context: ${{ github.workspace }}/markdown-to-html
+          file: ${{ github.workspace }}/markdown-to-html/Dockerfile.stdio
+          tags: '${{ steps.meta-markdown-to-html.outputs.tags }},${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/markdown-to-html:stdio'
+          labels: ${{ steps.meta-markdown-to-html.outputs.labels }}
+
+      - name: Generate artifact attestation - markdown-to-html - stdio
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/markdown-to-html
+          subject-digest: ${{ steps.push-markdown-to-html-stdio.outputs.digest }}
+          push-to-registry: true
+
+      - name: Build and push Docker image - markdown-to-html - http
+        id: push-markdown-to-html-http
         uses: docker/build-push-action@v6
         with:
           push: true
           context: ${{ github.workspace }}/markdown-to-html
           file: ${{ github.workspace }}/markdown-to-html/Dockerfile.http
-          tags: '${{ steps.meta-markdown-to-html.outputs.tags }},${{ env.REGISTRY }}/markdown-to-html:latest'
+          tags: '${{ steps.meta-markdown-to-html.outputs.tags }},${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/markdown-to-html:http'
           labels: ${{ steps.meta-markdown-to-html.outputs.labels }}
 
-      - name: Generate artifact attestation - markdown-to-html
+      - name: Generate artifact attestation - markdown-to-html - http
         uses: actions/attest-build-provenance@v2
         with:
-          subject-name: ${{ env.REGISTRY }}/markdown-to-html
-          subject-digest: ${{ steps.push-markdown-to-html.outputs.digest }}
+          subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/markdown-to-html
+          subject-digest: ${{ steps.push-markdown-to-html-http.outputs.digest }}
           push-to-registry: true
 
-      - name: Extract metadata (tags, labels) for Docker - todo-list
+      - name: Extract metadata (tags, labels) for Docker - todo-list - http
         id: meta-todo-list
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/todo-list
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/todo-list
 
-      - name: Build and push Docker image - todo-list
-        id: push-todo-list
+      - name: Build and push Docker image - todo-list - http
+        id: push-todo-list-http
         uses: docker/build-push-action@v6
         with:
           push: true
           context: ${{ github.workspace }}/todo-list
           file: ${{ github.workspace }}/todo-list/Dockerfile
-          tags: '${{ steps.meta-todo-list.outputs.tags }},${{ env.REGISTRY }}/todo-list:latest'
+          tags: '${{ steps.meta-todo-list.outputs.tags }},${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/todo-list:http'
           labels: ${{ steps.meta-todo-list.outputs.labels }}
 
       - name: Generate artifact attestation - todo-list
         uses: actions/attest-build-provenance@v2
         with:
-          subject-name: ${{ env.REGISTRY }}/todo-list
-          subject-digest: ${{ steps.push-todo-list.outputs.digest }}
+          subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/todo-list
+          subject-digest: ${{ steps.push-todo-list-http.outputs.digest }}
           push-to-registry: true

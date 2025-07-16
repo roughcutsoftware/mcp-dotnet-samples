@@ -110,6 +110,12 @@ This is an MCP server that converts markdown text to HTML.
     docker run -d -p 8080:8080 --name mcp-md2html-http mcp-md2html-http:latest
     ```
 
+   Alternatively, use the container image from the container registry.
+
+    ```bash
+    docker run -d -p 8080:8080 --name mcp-md2html-http ghcr.io/microsoft/mcp-dotnet-samples/markdown-to-html:http
+    ```
+
    > **NOTE**: If you're converting the markdown text for [Microsoft Tech Community](https://techcommunity.microsoft.com/), the following parameters are helpful to pass.
    >
    > - `--tech-community`/`-tc`: The switch that indicates to convert the markdown text to HTML specific to Microsoft Tech Community.
@@ -119,7 +125,13 @@ This is an MCP server that converts markdown text to HTML.
    > With these parameters, you can run the MCP server like:
    >
    > ```bash
+   > # use local container image
    > docker run -d -p 8080:8080 --name mcp-md2html-http mcp-md2html-http:latest -tc -p --tags "p,h1,h2,h3,ol,ul,dl"
+   > ```
+   >
+   > ```bash
+   > # use container image from the container registry
+   > docker run -d -p 8080:8080 --name mcp-md2html-http ghcr.io/microsoft/mcp-dotnet-samples/markdown-to-html:http -tc -p --tags "p,h1,h2,h3,ol,ul,dl"
    > ```
 
 ### Run ASP.NET Core MCP server (Streamable HTTP) remotely
@@ -215,6 +227,8 @@ This is an MCP server that converts markdown text to HTML.
     Copy-Item -Path $REPOSITORY_ROOT/markdown-to-html/.vscode/mcp.stdio.container.json `
               -Destination $REPOSITORY_ROOT/.vscode/mcp.json -Force
     ```
+
+   > **NOTE**: If you want to use the container image from the container registry, replace `mcp-md2html-stdio:latest` with `ghcr.io/microsoft/mcp-dotnet-samples/markdown-to-html:stdio` in the `.vscode/mcp.json` file
 
 1. Open Command Palette by typing `F1` or `Ctrl`+`Shift`+`P` on Windows or `Cmd`+`Shift`+`P` on Mac OS, and search `MCP: List Servers`.
 1. Choose `mcp-md2html-stdio-container` then click `Start Server`.

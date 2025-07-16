@@ -73,6 +73,12 @@ This is an MCP server, hosted on [Azure Container Apps](https://learn.microsoft.
     docker run -d -p 8080:8080 --name mcp-todo-list mcp-todo-list:latest
     ```
 
+   Alternatively, use the container image from the container registry.
+
+    ```bash
+    docker run -d -p 8080:8080 --name mcp-todo-list ghcr.io/microsoft/mcp-dotnet-samples/todo-list:http
+    ```
+
 ### Run ASP.NET Core MCP server remotely
 
 1. Login to Azure
