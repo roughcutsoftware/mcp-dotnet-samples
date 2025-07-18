@@ -6,10 +6,18 @@ on:
 jobs:
   build-and-push-image:
     uses: ./.github/workflows/build-container.yaml
+
     strategy:
       matrix:
         image_name: [ 'awesome-copilot' ]
         extension: [ 'stdio', 'http' ]
+
+    permissions:
+      contents: write
+      packages: write
+      attestations: write
+      id-token: write
+
     with:
       image_name: ${{ matrix.image_name }}
       extension: ${{ matrix.extension }}
