@@ -4,13 +4,34 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-push-image:
+  build-and-push-image-stdio:
     uses: ./.github/workflows/build-container.yaml
 
     strategy:
       matrix:
         image_name: [ 'awesome-copilot' ]
-        extension: [ 'stdio', 'http' ]
+        extension: [ 'stdio' ]
+
+    permissions:
+      contents: write
+      packages: write
+      attestations: write
+      id-token: write
+
+    with:
+      image_name: ${{ matrix.image_name }}
+      extension: ${{ matrix.extension }}
+    secrets: inherit
+
+  build-and-push-image-http:
+    uses: ./.github/workflows/build-container.yaml
+
+    needs: build-and-push-image-stdio
+
+    strategy:
+      matrix:
+        image_name: [ 'awesome-copilot' ]
+        extension: [ 'http' ]
 
     permissions:
       contents: write

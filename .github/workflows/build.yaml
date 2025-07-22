@@ -11,8 +11,50 @@ jobs:
 
     strategy:
       matrix:
-        image_name: [ 'awesome-copilot', 'markdown-to-html', 'todo-list' ]
+        image_name: [ 'markdown-to-html', 'todo-list' ]
         extension: [ 'stdio', 'http' ]
+
+    permissions:
+      contents: write
+      packages: write
+      attestations: write
+      id-token: write
+
+    with:
+      image_name: ${{ matrix.image_name }}
+      extension: ${{ matrix.extension }}
+    secrets: inherit
+
+  build-and-push-image-awesome-copilot-stdio:
+    uses: ./.github/workflows/build-container.yaml
+
+    needs: build-and-push-image
+
+    strategy:
+      matrix:
+        image_name: [ 'awesome-copilot']
+        extension: [ 'stdio' ]
+
+    permissions:
+      contents: write
+      packages: write
+      attestations: write
+      id-token: write
+
+    with:
+      image_name: ${{ matrix.image_name }}
+      extension: ${{ matrix.extension }}
+    secrets: inherit
+
+  build-and-push-image-awesome-copilot-http:
+    uses: ./.github/workflows/build-container.yaml
+
+    needs: build-and-push-image-awesome-copilot-stdio
+
+    strategy:
+      matrix:
+        image_name: [ 'awesome-copilot' ]
+        extension: [ 'http' ]
 
     permissions:
       contents: write
