@@ -36,6 +36,16 @@ jobs:
           path: awesome-copilot/src/awesome-copilot
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Pull the latest awesome-copilot repository
+        if: inputs.image_name == 'awesome-copilot'
+        shell: bash
+        run: |
+          pushd awesome-copilot/src/awesome-copilot
+
+          git pull origin main
+
+          popd
+
       - name: Set up Node.js
         if: inputs.image_name == 'awesome-copilot'
         uses: actions/setup-node@v4
