@@ -28,6 +28,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Pull the latest metadata.json
+        if: inputs.image_name == 'awesome-copilot'
+        shell: bash
+        run: |
+          git pull origin main
+
       - name: Checkout repository - Awesome Copilot
         if: inputs.image_name == 'awesome-copilot'
         uses: actions/checkout@v4
@@ -35,16 +41,6 @@ jobs:
           repository: github/awesome-copilot
           path: awesome-copilot/src/awesome-copilot
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Pull the latest awesome-copilot repository
-        if: inputs.image_name == 'awesome-copilot'
-        shell: bash
-        run: |
-          pushd awesome-copilot/src/awesome-copilot
-
-          git pull origin main
-
-          popd
 
       - name: Set up Node.js
         if: inputs.image_name == 'awesome-copilot'
