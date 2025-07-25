@@ -920,7 +920,7 @@
     },
     {
       "filename": "dotnet-architecture-good-practices.instructions.md",
-      "description": "\"DDD and .NET architecture guidelines'",
+      "description": "DDD and .NET architecture guidelines",
       "applyTo": [
         "**/*.cs",
         "**/*.csproj",
@@ -931,6 +931,14 @@
     {
       "filename": "dotnet-maui.instructions.md",
       "description": ".NET MAUI component and application patterns",
+      "applyTo": [
+        "**/*.xaml",
+        "**/*.cs"
+      ]
+    },
+    {
+      "filename": "dotnet-wpf.instructions.md",
+      "description": ".NET WPF component and application patterns",
       "applyTo": [
         "**/*.xaml",
         "**/*.cs"
@@ -1042,6 +1050,13 @@
         "**/*.js",
         "**/*.css"
       ]
+    },
+    {
+      "filename": "nextjs.instructions.md",
+      "applyTo": [
+        "**"
+      ],
+      "description": "No description provided"
     },
     {
       "filename": "nodejs-javascript-vitest.instructions.md",
@@ -1241,6 +1256,38 @@
         "testFailure",
         "usages",
         "vscodeAPI"
+      ]
+    },
+    {
+      "filename": "create-github-action-workflow-specification.prompt.md",
+      "mode": "agent",
+      "description": "Create a formal specification for an existing GitHub Actions CI/CD workflow, optimized for AI consumption and workflow maintenance.",
+      "tools": [
+        "changes",
+        "codebase",
+        "editFiles",
+        "extensions",
+        "fetch",
+        "findTestFiles",
+        "githubRepo",
+        "new",
+        "openSimpleBrowser",
+        "problems",
+        "runCommands",
+        "runInTerminal2",
+        "runNotebooks",
+        "runTasks",
+        "runTests",
+        "search",
+        "searchResults",
+        "terminalLastCommand",
+        "terminalSelection",
+        "testFailure",
+        "usages",
+        "vscodeAPI",
+        "microsoft.docs.mcp",
+        "github",
+        "Microsoft Docs"
       ]
     },
     {
@@ -1617,9 +1664,57 @@
       "description": "Add new language to a Next.js + next-intl application"
     },
     {
+      "filename": "postgresql-code-review.prompt.md",
+      "mode": "agent",
+      "tools": [
+        "changes",
+        "codebase",
+        "editFiles",
+        "problems"
+      ],
+      "description": "PostgreSQL-specific code review assistant focusing on PostgreSQL best practices, anti-patterns, and unique quality standards. Covers JSONB operations, array usage, custom types, schema design, function optimization, and PostgreSQL-exclusive security features like Row Level Security (RLS).",
+      "tested_with": "GitHub Copilot Chat (GPT-4o) - Validated July 20, 2025"
+    },
+    {
+      "filename": "postgresql-optimization.prompt.md",
+      "mode": "agent",
+      "tools": [
+        "changes",
+        "codebase",
+        "editFiles",
+        "problems"
+      ],
+      "description": "PostgreSQL-specific development assistant focusing on unique PostgreSQL features, advanced data types, and PostgreSQL-exclusive capabilities. Covers JSONB operations, array types, custom types, range/geometric types, full-text search, window functions, and PostgreSQL extensions ecosystem.",
+      "tested_with": "GitHub Copilot Chat (GPT-4o) - Validated July 20, 2025"
+    },
+    {
       "filename": "review-and-refactor.prompt.md",
       "mode": "agent",
       "description": "Review and refactor code in your project according to defined instructions"
+    },
+    {
+      "filename": "sql-code-review.prompt.md",
+      "mode": "agent",
+      "tools": [
+        "changes",
+        "codebase",
+        "editFiles",
+        "problems"
+      ],
+      "description": "Universal SQL code review assistant that performs comprehensive security, maintainability, and code quality analysis across all SQL databases (MySQL, PostgreSQL, SQL Server, Oracle). Focuses on SQL injection prevention, access control, code standards, and anti-pattern detection. Complements SQL optimization prompt for complete development coverage.",
+      "tested_with": "GitHub Copilot Chat (GPT-4o) - Validated July 20, 2025"
+    },
+    {
+      "filename": "sql-optimization.prompt.md",
+      "mode": "agent",
+      "tools": [
+        "changes",
+        "codebase",
+        "editFiles",
+        "problems"
+      ],
+      "description": "Universal SQL performance optimization assistant for comprehensive query tuning, indexing strategies, and database performance analysis across all SQL databases (MySQL, PostgreSQL, SQL Server, Oracle). Provides execution plan analysis, pagination optimization, batch operations, and performance monitoring guidance.",
+      "tested_with": "GitHub Copilot Chat (GPT-4o) - Validated July 20, 2025"
     },
     {
       "filename": "suggest-awesome-github-copilot-chatmodes.prompt.md",
