@@ -161,6 +161,33 @@
       ]
     },
     {
+      "filename": "blueprint-mode.chatmode.md",
+      "description": "This mode mandates the agent to operate as a self-sufficient, autonomous engineer. It requires rigorous planning before execution, meticulous documentation, proactive issue resolution, and perpetual design improvement. All resources must be fully leveraged and all constraints bypassed to guarantee the delivery of superior solutions.",
+      "tools": [
+        "changes",
+        "codebase",
+        "editFiles",
+        "extensions",
+        "fetch",
+        "findTestFiles",
+        "githubRepo",
+        "new",
+        "openSimpleBrowser",
+        "problems",
+        "runCommands",
+        "runNotebooks",
+        "runTasks",
+        "runTests",
+        "search",
+        "searchResults",
+        "terminalLastCommand",
+        "terminalSelection",
+        "testFailure",
+        "usages",
+        "vscodeAPI"
+      ]
+    },
+    {
       "filename": "clojure-interactive-programming.chatmode.md",
       "description": "Expert Clojure pair programmer with REPL-first methodology, architectural oversight, and interactive problem-solving. Enforces quality standards, prevents workarounds, and develops solutions incrementally through live REPL evaluation before file modifications.",
       "title": "Clojure Interactive Programming with Backseat Driver"
@@ -491,6 +518,28 @@
         "search",
         "usages"
       ]
+    },
+    {
+      "filename": "playwright-tester.chatmode.md",
+      "description": "Testing mode for Playwright tests",
+      "tools": [
+        "changes",
+        "codebase",
+        "editFiles",
+        "fetch",
+        "findTestFiles",
+        "problems",
+        "runCommands",
+        "runTasks",
+        "runTests",
+        "search",
+        "searchResults",
+        "terminalLastCommand",
+        "terminalSelection",
+        "testFailure",
+        "playwright"
+      ],
+      "model": "Claude Sonnet 4"
     },
     {
       "filename": "postgresql-dba.chatmode.md",
@@ -1092,6 +1141,17 @@
       "description": "Instructions for customizing GitHub Copilot behavior for MS-SQL DBA chat mode."
     },
     {
+      "filename": "nestjs.instructions.md",
+      "applyTo": [
+        "**/*.ts",
+        "**/*.js",
+        "**/*.json",
+        "**/*.spec.ts",
+        "**/*.e2e-spec.ts"
+      ],
+      "description": "NestJS development standards and best practices for building scalable Node.js server-side applications"
+    },
+    {
       "filename": "nextjs-tailwind.instructions.md",
       "description": "Next.js + Tailwind development standards and instructions",
       "applyTo": [
@@ -1149,6 +1209,13 @@
         "**/*.{json",
         "md}"
       ]
+    },
+    {
+      "filename": "powershell-pester-5.instructions.md",
+      "applyTo": [
+        "**/*.Tests.ps1"
+      ],
+      "description": "PowerShell Pester testing best practices based on Pester v5 conventions"
     },
     {
       "filename": "powershell.instructions.md",
@@ -1255,6 +1322,13 @@
       ]
     },
     {
+      "filename": "terraform.instructions.md",
+      "description": "Terraform Conventions and Guidelines",
+      "applyTo": [
+        "**/*.tf"
+      ]
+    },
+    {
       "filename": "vuejs3.instructions.md",
       "description": "VueJS 3 development standards and best practices with Composition API and TypeScript",
       "applyTo": [
@@ -1269,6 +1343,10 @@
     {
       "filename": "ai-prompt-engineering-safety-review.prompt.md",
       "description": "Comprehensive AI prompt engineering safety review and improvement prompt. Analyzes prompts for safety, bias, security vulnerabilities, and effectiveness while providing detailed improvement recommendations with extensive frameworks, testing methodologies, and educational content."
+    },
+    {
+      "filename": "architecture-blueprint-generator.prompt.md",
+      "description": "Comprehensive project architecture blueprint generator that analyzes codebases to create detailed architectural documentation. Automatically detects technology stacks and architectural patterns, generates visual diagrams, documents implementation patterns, and provides extensible blueprints for maintaining architectural consistency and guiding new development."
     },
     {
       "filename": "aspnet-minimal-api-openapi.prompt.md",
@@ -1292,8 +1370,16 @@
       "description": "Analyze Azure resource health, diagnose issues from logs and telemetry, and create a remediation plan for identified problems."
     },
     {
+      "filename": "code-exemplars-blueprint-generator.prompt.md",
+      "description": "Technology-agnostic prompt generator that creates customizable AI prompts for scanning codebases and identifying high-quality code exemplars. Supports multiple programming languages (.NET, Java, JavaScript, TypeScript, React, Angular, Python) with configurable analysis depth, categorization methods, and documentation formats to establish coding standards and maintain consistency across development teams."
+    },
+    {
       "filename": "comment-code-generate-a-tutorial.prompt.md",
       "description": "Transform this Python script into a polished, beginner-friendly project by refactoring the code, adding clear instructional comments, and generating a complete markdown tutorial."
+    },
+    {
+      "filename": "copilot-instructions-blueprint-generator.prompt.md",
+      "description": "Technology-agnostic blueprint generator for creating comprehensive copilot-instructions.md files that guide GitHub Copilot to produce code consistent with project standards, architecture patterns, and exact technology versions by analyzing existing codebase patterns and avoiding assumptions."
     },
     {
       "filename": "create-architectural-decision-record.prompt.md",
@@ -1617,6 +1703,10 @@
       "description": "Get best practices for Entity Framework Core"
     },
     {
+      "filename": "folder-structure-blueprint-generator.prompt.md",
+      "description": "Comprehensive technology-agnostic prompt for analyzing and documenting project folder structures. Auto-detects project types (.NET, Java, React, Angular, Python, Node.js, Flutter), generates detailed blueprints with visualization options, naming conventions, file placement patterns, and extension templates for maintaining consistent code organization across diverse technology stacks."
+    },
+    {
       "filename": "gen-specs-as-issues.prompt.md",
       "description": "This workflow guides you through a systematic approach to identify missing features, prioritize them, and create detailed specifications for implementation."
     },
@@ -1724,6 +1814,61 @@
       "description": "Add new language to a Next.js + next-intl application"
     },
     {
+      "filename": "playwright-automation-fill-in-form.prompt.md",
+      "description": "Automate filling in a form using Playwright MCP",
+      "mode": "agent",
+      "tools": [
+        "playwright"
+      ],
+      "model": "Claude Sonnet 4"
+    },
+    {
+      "filename": "playwright-explore-website.prompt.md",
+      "mode": "agent",
+      "description": "Website exploration for testing using Playwright MCP",
+      "tools": [
+        "changes",
+        "codebase",
+        "editFiles",
+        "fetch",
+        "findTestFiles",
+        "problems",
+        "runCommands",
+        "runTasks",
+        "runTests",
+        "search",
+        "searchResults",
+        "terminalLastCommand",
+        "terminalSelection",
+        "testFailure",
+        "playwright"
+      ],
+      "model": "Claude Sonnet 4"
+    },
+    {
+      "filename": "playwright-generate-test.prompt.md",
+      "mode": "agent",
+      "description": "Generate a Playwright test based on a scenario using Playwright MCP",
+      "tools": [
+        "changes",
+        "codebase",
+        "editFiles",
+        "fetch",
+        "findTestFiles",
+        "problems",
+        "runCommands",
+        "runTasks",
+        "runTests",
+        "search",
+        "searchResults",
+        "terminalLastCommand",
+        "terminalSelection",
+        "testFailure",
+        "playwright"
+      ],
+      "model": "Claude Sonnet 4"
+    },
+    {
       "filename": "postgresql-code-review.prompt.md",
       "mode": "agent",
       "tools": [
@@ -1746,6 +1891,31 @@
       ],
       "description": "PostgreSQL-specific development assistant focusing on unique PostgreSQL features, advanced data types, and PostgreSQL-exclusive capabilities. Covers JSONB operations, array types, custom types, range/geometric types, full-text search, window functions, and PostgreSQL extensions ecosystem.",
       "tested_with": "GitHub Copilot Chat (GPT-4o) - Validated July 20, 2025"
+    },
+    {
+      "filename": "project-workflow-analysis-blueprint-generator.prompt.md",
+      "description": "Comprehensive technology-agnostic prompt generator for documenting end-to-end application workflows. Automatically detects project architecture patterns, technology stacks, and data flow patterns to generate detailed implementation blueprints covering entry points, service layers, data access, error handling, and testing approaches across multiple technologies including .NET, Java/Spring, React, and microservices architectures."
+    },
+    {
+      "filename": "readme-blueprint-generator.prompt.md",
+      "description": "Intelligent README.md generation prompt that analyzes project documentation structure and creates comprehensive repository documentation. Scans .github/copilot directory files and copilot-instructions.md to extract project information, technology stack, architecture, development workflow, coding standards, and testing approaches while generating well-structured markdown documentation with proper formatting, cross-references, and developer-focused content."
+    },
+    {
+      "filename": "repo-story-time.prompt.md",
+      "mode": "agent",
+      "description": "Generate a comprehensive repository summary and narrative story from commit history",
+      "tools": [
+        "changes",
+        "codebase",
+        "editFiles",
+        "githubRepo",
+        "runCommands",
+        "runTasks",
+        "search",
+        "searchResults",
+        "terminalLastCommand",
+        "terminalSelection"
+      ]
     },
     {
       "filename": "review-and-refactor.prompt.md",
@@ -1829,6 +1999,10 @@
         "vscodeAPI",
         "github"
       ]
+    },
+    {
+      "filename": "technology-stack-blueprint-generator.prompt.md",
+      "description": "Comprehensive technology stack blueprint generator that analyzes codebases to create detailed architectural documentation. Automatically detects technology stacks, programming languages, and implementation patterns across multiple platforms (.NET, Java, JavaScript, React, Python). Generates configurable blueprints with version information, licensing details, usage patterns, coding conventions, and visual diagrams. Provides implementation-ready templates and maintains architectural consistency for guided development."
     },
     {
       "filename": "update-avm-modules-in-bicep.prompt.md",
