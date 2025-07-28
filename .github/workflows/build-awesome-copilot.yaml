@@ -2,6 +2,8 @@ name: Build MCP Server - Awesome Copilot
 
 on:
   workflow_dispatch:
+  # schedule:
+  #   - cron: '0 * * * *' # Every hour at minute 0
 
 jobs:
   build-and-push-image-stdio:

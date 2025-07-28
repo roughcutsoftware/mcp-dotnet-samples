@@ -28,6 +28,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Identify multi-platform support
+        id: platform
+        shell: bash
+        run: |
+          if [ "${{ inputs.image_name }}" = "todo-list" ]; then
+            echo "supports_multiplatform=false" >> $GITHUB_OUTPUT
+          else
+            echo "supports_multiplatform=true" >> $GITHUB_OUTPUT
+          fi
+
       - name: Pull the latest metadata.json
         if: inputs.image_name == 'awesome-copilot'
         shell: bash
@@ -105,9 +115,11 @@ jobs:
         if: steps.check-dockerfile.outputs.exists == 'true'
         uses: docker/setup-buildx-action@v3
 
-      - name: Build and push Docker image
-        if: steps.check-dockerfile.outputs.exists == 'true'
-        id: push
+      - name: Build and push Docker image - multi-platform
+        if: |
+          steps.check-dockerfile.outputs.exists == 'true' &&
+          steps.platform.outputs.supports_multiplatform == 'true'
+        id: push-multiplatform
         uses: docker/build-push-action@v6
         with:
           platforms: linux/amd64,linux/arm64
@@ -117,10 +129,36 @@ jobs:
           tags: '${{ steps.meta.outputs.tags }},${{ env.REGISTRY }}/${{ env.REPOSITORY }}/${{ inputs.image_name }}:${{ inputs.extension }}'
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Generate artifact attestation
-        if: steps.check-dockerfile.outputs.exists == 'true'
+      - name: Generate artifact attestation - multi-platform
+        if: |
+          steps.check-dockerfile.outputs.exists == 'true' &&
+          steps.platform.outputs.supports_multiplatform == 'true'
         uses: actions/attest-build-provenance@v2
         with:
           subject-name: ${{ env.REGISTRY }}/${{ env.REPOSITORY }}/${{ inputs.image_name }}
-          subject-digest: ${{ steps.push.outputs.digest }}
+          subject-digest: ${{ steps.push-multiplatform.outputs.digest }}
+          push-to-registry: true
+
+      - name: Build and push Docker image - amd64 only
+        if: |
+          steps.check-dockerfile.outputs.exists == 'true' &&
+          steps.platform.outputs.supports_multiplatform == 'false'
+        id: push-amd64
+        uses: docker/build-push-action@v6
+        with:
+          platforms: linux/amd64
+          push: true
+          context: ${{ github.workspace }}/${{ inputs.image_name }}
+          file: ${{ github.workspace }}/${{ inputs.image_name }}/Dockerfile.${{ inputs.extension }}
+          tags: '${{ steps.meta.outputs.tags }},${{ env.REGISTRY }}/${{ env.REPOSITORY }}/${{ inputs.image_name }}:${{ inputs.extension }}'
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Generate artifact attestation - amd64 only
+        if: |
+          steps.check-dockerfile.outputs.exists == 'true' &&
+          steps.platform.outputs.supports_multiplatform == 'false'
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-name: ${{ env.REGISTRY }}/${{ env.REPOSITORY }}/${{ inputs.image_name }}
+          subject-digest: ${{ steps.push-amd64.outputs.digest }}
           push-to-registry: true

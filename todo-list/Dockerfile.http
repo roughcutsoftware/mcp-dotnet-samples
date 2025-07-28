@@ -2,9 +2,9 @@
 
 FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:9.0-alpine AS build
 
-COPY . /source
+COPY ./src/McpTodoList.ContainerApp /source/McpTodoList.ContainerApp
 
-WORKDIR /source/src/McpTodoList.ContainerApp
+WORKDIR /source/McpTodoList.ContainerApp
 
 ARG TARGETARCH
 RUN case "$TARGETARCH" in \

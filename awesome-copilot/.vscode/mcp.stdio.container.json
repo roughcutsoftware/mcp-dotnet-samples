@@ -7,9 +7,7 @@
         "run",
         "-i",
         "--rm",
-        "mcp-awesome-copilot-stdio:latest",
-        "-tc",
-        "-p"
+        "mcp-awesome-copilot-stdio:latest"
       ]
     }
   }
