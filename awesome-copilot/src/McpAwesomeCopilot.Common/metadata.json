@@ -460,6 +460,13 @@
       "model": "GPT-4.1"
     },
     {
+      "filename": "microsoft-study-mode.chatmode.md",
+      "description": "Activate your personal Microsoft/Azure tutor - learn through guided discovery, not just answers.",
+      "tools": [
+        "microsoft_docs_search"
+      ]
+    },
+    {
       "filename": "microsoft_learn_contributor.chatmode.md",
       "description": "Microsoft Learn Contributor chatmode for editing and writing Microsoft Learn documentation following Microsoft Writing Style Guide and authoring best practices.",
       "tools": [
