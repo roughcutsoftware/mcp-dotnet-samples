@@ -162,7 +162,8 @@
     },
     {
       "filename": "blueprint-mode.chatmode.md",
-      "description": "This mode mandates the agent to operate as a self-sufficient, autonomous engineer. It requires rigorous planning before execution, meticulous documentation, proactive issue resolution, and perpetual design improvement. All resources must be fully leveraged and all constraints bypassed to guarantee the delivery of superior solutions.",
+      "model": "Claude Sonnet 4",
+      "description": "Blueprint Mode enforces autonomous engineering with strict specification-first development. Agents must plan rigorously, document meticulously, and resolve issues proactively. All resources are maximized, constraints bypassed, and no placeholders allowed to deliver optimal solutions.",
       "tools": [
         "changes",
         "codebase",
@@ -1895,6 +1896,16 @@
     {
       "filename": "project-workflow-analysis-blueprint-generator.prompt.md",
       "description": "Comprehensive technology-agnostic prompt generator for documenting end-to-end application workflows. Automatically detects project architecture patterns, technology stacks, and data flow patterns to generate detailed implementation blueprints covering entry points, service layers, data access, error handling, and testing approaches across multiple technologies including .NET, Java/Spring, React, and microservices architectures."
+    },
+    {
+      "filename": "prompt-builder.prompt.md",
+      "mode": "agent",
+      "tools": [
+        "codebase",
+        "editFiles",
+        "search"
+      ],
+      "description": "Guide users through creating high-quality GitHub Copilot prompts with proper structure, tools, and best practices."
     },
     {
       "filename": "readme-blueprint-generator.prompt.md",
