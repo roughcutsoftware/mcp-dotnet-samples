@@ -162,31 +162,8 @@
     },
     {
       "filename": "blueprint-mode.chatmode.md",
-      "model": "Claude Sonnet 4",
-      "description": "Blueprint Mode enforces autonomous engineering with strict specification-first development. Agents must plan rigorously, document meticulously, and resolve issues proactively. All resources are maximized, constraints bypassed, and no placeholders allowed to deliver optimal solutions.",
-      "tools": [
-        "changes",
-        "codebase",
-        "editFiles",
-        "extensions",
-        "fetch",
-        "findTestFiles",
-        "githubRepo",
-        "new",
-        "openSimpleBrowser",
-        "problems",
-        "runCommands",
-        "runNotebooks",
-        "runTasks",
-        "runTests",
-        "search",
-        "searchResults",
-        "terminalLastCommand",
-        "terminalSelection",
-        "testFailure",
-        "usages",
-        "vscodeAPI"
-      ]
+      "model": "GPT-4.1",
+      "description": "Blueprint Mode drives autonomous engineering through strict specification-first development, requiring rigorous planning, comprehensive documentation, proactive issue resolution, and resource optimization to deliver robust, high-quality solutions without placeholders."
     },
     {
       "filename": "clojure-interactive-programming.chatmode.md",
@@ -1717,6 +1694,14 @@
     {
       "filename": "gen-specs-as-issues.prompt.md",
       "description": "This workflow guides you through a systematic approach to identify missing features, prioritize them, and create detailed specifications for implementation."
+    },
+    {
+      "filename": "git-flow-branch-creator.prompt.md",
+      "description": "Intelligent Git Flow branch creator that analyzes git status/diff and creates appropriate branches following the nvie Git Flow branching model.",
+      "tools": [
+        "run_in_terminal",
+        "get_terminal_output"
+      ]
     },
     {
       "filename": "java-docs.prompt.md",
