@@ -7,6 +7,11 @@
       "title": "4.1 Beast Mode (VS Code v1.102)"
     },
     {
+      "filename": "Thinking-Beast-Mode.chatmode.md",
+      "description": "A transcendent coding agent with quantum cognitive architecture, adversarial intelligence, and unrestricted creative freedom.",
+      "title": "Thinking Beast Mode"
+    },
+    {
       "filename": "accesibility.chatmode.md",
       "description": "Accessibility mode.",
       "model": "GPT-4.1",
@@ -1014,6 +1019,14 @@
       ]
     },
     {
+      "filename": "dotnet-framework.instructions.md",
+      "description": "Guidance for working with .NET Framework projects. Includes project structure, C# language version, NuGet management, and best practices.",
+      "applyTo": [
+        "**/*.csproj'",
+        "'**/*.cs"
+      ]
+    },
+    {
       "filename": "dotnet-maui.instructions.md",
       "description": ".NET MAUI component and application patterns",
       "applyTo": [
@@ -1353,6 +1366,36 @@
       "filename": "azure-resource-health-diagnose.prompt.md",
       "mode": "agent",
       "description": "Analyze Azure resource health, diagnose issues from logs and telemetry, and create a remediation plan for identified problems."
+    },
+    {
+      "filename": "breakdown-epic-arch.prompt.md",
+      "mode": "agent",
+      "description": "Prompt for creating the high-level technical architecture for an Epic, based on a Product Requirements Document."
+    },
+    {
+      "filename": "breakdown-epic-pm.prompt.md",
+      "mode": "agent",
+      "description": "Prompt for creating an Epic Product Requirements Document (PRD) for a new epic. This PRD will be used as input for generating a technical architecture specification."
+    },
+    {
+      "filename": "breakdown-feature-implementation.prompt.md",
+      "mode": "agent",
+      "description": "Prompt for creating detailed feature implementation plans, following Epoch monorepo structure."
+    },
+    {
+      "filename": "breakdown-feature-prd.prompt.md",
+      "mode": "agent",
+      "description": "Prompt for creating Product Requirements Documents (PRDs) for new features, based on an Epic."
+    },
+    {
+      "filename": "breakdown-plan.prompt.md",
+      "mode": "agent",
+      "description": "Issue Planning and Automation prompt that generates comprehensive project plans with Epic > Feature > Story/Enabler > Test hierarchy, dependencies, priorities, and automated tracking."
+    },
+    {
+      "filename": "breakdown-test.prompt.md",
+      "mode": "agent",
+      "description": "Test Planning and Quality Assurance prompt that generates comprehensive test strategies, task breakdowns, and quality validation plans for GitHub projects."
     },
     {
       "filename": "code-exemplars-blueprint-generator.prompt.md",
