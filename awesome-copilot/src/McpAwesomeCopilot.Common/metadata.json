@@ -1808,6 +1808,26 @@
       "description": "Get best practices for developing applications with Spring Boot and Kotlin."
     },
     {
+      "filename": "mkdocs-translations.prompt.md",
+      "mode": "agent",
+      "description": "Generate a language translation for a mkdocs documentation stack.",
+      "tools": [
+        "codebase",
+        "usages",
+        "problems",
+        "changes",
+        "terminalSelection",
+        "terminalLastCommand",
+        "searchResults",
+        "extensions",
+        "editFiles",
+        "search",
+        "runCommands",
+        "runTasks"
+      ],
+      "model": "Claude Sonnet 4"
+    },
+    {
       "filename": "multi-stage-dockerfile.prompt.md",
       "mode": "agent",
       "tools": [
