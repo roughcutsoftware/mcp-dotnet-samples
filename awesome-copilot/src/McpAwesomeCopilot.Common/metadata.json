@@ -1406,6 +1406,16 @@
       "description": "Transform this Python script into a polished, beginner-friendly project by refactoring the code, adding clear instructional comments, and generating a complete markdown tutorial."
     },
     {
+      "filename": "containerize-aspnetcore.prompt.md",
+      "mode": "agent",
+      "tools": [
+        "codebase",
+        "editFiles",
+        "terminalCommand"
+      ],
+      "description": "Containerize an ASP.NET Core project by creating Dockerfile and .dockerfile files customized for the project."
+    },
+    {
       "filename": "copilot-instructions-blueprint-generator.prompt.md",
       "description": "Technology-agnostic blueprint generator for creating comprehensive copilot-instructions.md files that guide GitHub Copilot to produce code consistent with project standards, architecture patterns, and exact technology versions by analyzing existing codebase patterns and avoiding assumptions."
     },
