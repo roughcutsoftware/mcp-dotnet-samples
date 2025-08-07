@@ -1,8 +1,8 @@
 {
   "servers": {
-    "mcp-md2html-http-local": {
+    "markdown-to-html": {
       "type": "http",
-      "url": "http://0.0.0.0:5280/mcp"
+      "url": "http://localhost:5280/mcp"
     }
   }
 }

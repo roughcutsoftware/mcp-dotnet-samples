@@ -8,6 +8,8 @@ public class AppSettings
 {
     public HtmlSettings Html { get; set; } = new HtmlSettings();
 
+    public bool UseHttp { get; set; }
+
     public bool Help { get; set; }
 
     public static AppSettings Parse(IConfiguration config, string[] args)
@@ -31,6 +33,10 @@ public class AppSettings
             var arg = args[i];
             switch (arg)
             {
+                case "--http":
+                    settings.UseHttp = true;
+                    break;
+
                 case "--tech-community":
                 case "-tc":
                     settings.Html.TechCommunity = true;
@@ -56,6 +62,18 @@ public class AppSettings
         }
 
         return settings;
+    }
+
+    public static bool UseStreamableHttp(string[] args)
+    {
+        if (args.Length == 0)
+        {
+            return false;
+        }
+
+        var useHttp = args.Contains("--http", StringComparer.InvariantCultureIgnoreCase);
+
+        return useHttp;
     }
 }
 
