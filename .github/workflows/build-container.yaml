@@ -32,6 +32,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.x'
+
       - name: Pull the latest metadata.json
         if: inputs.image_name == 'awesome-copilot'
         shell: bash
@@ -81,6 +86,14 @@ jobs:
             git push origin main
           fi
 
+      - name: Build app
+        if: env.BUILD_IMAGE == 'true' || inputs.force == true
+        shell: bash
+        run: |
+          pushd ${{ inputs.image_name }}
+          dotnet restore && dotnet build
+          popd
+
       - name: Check if Dockerfile exists
         if: env.BUILD_IMAGE == 'true' || inputs.force == true
         id: check-dockerfile
@@ -126,7 +139,7 @@ jobs:
         with:
           platforms: linux/amd64,linux/arm64
           push: true
-          context: ${{ github.workspace }}/${{ inputs.image_name }}
+          context: ${{ github.workspace }}
           file: ${{ github.workspace }}/Dockerfile.${{ inputs.image_name }}
           tags: '${{ steps.meta.outputs.tags }},${{ env.REGISTRY }}/${{ env.REPOSITORY }}/${{ inputs.image_name }}:latest'
           labels: ${{ steps.meta.outputs.labels }}

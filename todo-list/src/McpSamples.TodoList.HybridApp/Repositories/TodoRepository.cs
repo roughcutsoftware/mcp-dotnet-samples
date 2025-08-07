@@ -74,7 +74,7 @@ public class TodoRepository(TodoDbContext db) : ITodoRepository
                                        .ConfigureAwait(false);
         if (record is null)
         {
-            return null;
+            return default!;
         }
 
         record.Text = todoItem.Text;
@@ -95,7 +95,7 @@ public class TodoRepository(TodoDbContext db) : ITodoRepository
                                        .ConfigureAwait(false);
         if (record is null)
         {
-            return null;
+            return default!;
         }
 
         record.IsCompleted = todoItem.IsCompleted;
@@ -116,7 +116,7 @@ public class TodoRepository(TodoDbContext db) : ITodoRepository
                                        .ConfigureAwait(false);
         if (record is null)
         {
-            return null;
+            return default!;
         }
 
         await db.TodoItems.Where(p => p.Id == id)
