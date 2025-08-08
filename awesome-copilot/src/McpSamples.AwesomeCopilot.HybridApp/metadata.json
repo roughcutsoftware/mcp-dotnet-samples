@@ -1096,6 +1096,13 @@
       ]
     },
     {
+      "filename": "dart-n-flutter.instructions.md",
+      "description": "Instructions for writing Dart and Flutter code following the official recommendations.",
+      "applyTo": [
+        "**/*.dart"
+      ]
+    },
+    {
       "filename": "devbox-image-definition.instructions.md",
       "description": "Authoring recommendations for creating YAML based image definition files for use with Microsoft Dev Box Team Customizations",
       "applyTo": [
@@ -1123,8 +1130,8 @@
       "filename": "dotnet-framework.instructions.md",
       "description": "Guidance for working with .NET Framework projects. Includes project structure, C# language version, NuGet management, and best practices.",
       "applyTo": [
-        "**/*.csproj'",
-        "'**/*.cs"
+        "**/*.csproj",
+        "**/*.cs"
       ]
     },
     {
@@ -1308,6 +1315,16 @@
       ]
     },
     {
+      "filename": "power-apps-canvas-yaml.instructions.md",
+      "description": "Comprehensive guide for working with Power Apps Canvas Apps YAML structure based on Microsoft Power Apps YAML schema v3.0. Covers Power Fx formulas, control structures, data types, and source control best practices.",
+      "applyTo": [
+        "**/*.{yaml",
+        "yml",
+        "md",
+        "pa.yaml}"
+      ]
+    },
+    {
       "filename": "power-platform-connector.instructions.md",
       "title": "Power Platform Connectors Schema Development Instructions",
       "description": "Comprehensive development guidelines for Power Platform Custom Connectors using JSON Schema definitions. Covers API definitions (Swagger 2.0), API properties, and settings configuration with Microsoft extensions.",
@@ -1369,6 +1386,13 @@
       "description": "Ruby on Rails coding conventions and guidelines",
       "applyTo": [
         "**/*.rb"
+      ]
+    },
+    {
+      "filename": "rust.instructions.md",
+      "description": "Rust programming language coding conventions and best practices",
+      "applyTo": [
+        "**/*.rs"
       ]
     },
     {
