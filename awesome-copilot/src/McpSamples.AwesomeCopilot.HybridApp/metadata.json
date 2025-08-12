@@ -1885,6 +1885,11 @@
       "description": "Review the C#/.NET code for design pattern implementation and suggest improvements."
     },
     {
+      "filename": "editorconfig.prompt.md",
+      "title": "EditorConfig Expert",
+      "description": "Generates a comprehensive and best-practice-oriented .editorconfig file based on project analysis and user preferences."
+    },
+    {
       "filename": "ef-core.prompt.md",
       "mode": "agent",
       "tools": [
