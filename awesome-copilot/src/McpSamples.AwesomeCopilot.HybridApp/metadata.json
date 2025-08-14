@@ -12,6 +12,11 @@
       "title": "Thinking Beast Mode"
     },
     {
+      "filename": "Ultimate-Transparent-Thinking-Beast-Mode.chatmode.md",
+      "title": "Ultimate Transparent Thinking Beast Mode",
+      "description": "Ultimate Transparent Thinking Beast Mode"
+    },
+    {
       "filename": "accesibility.chatmode.md",
       "description": "Accessibility mode.",
       "model": "GPT-4.1",
@@ -1466,6 +1471,13 @@
       "description": "Instructions for implementing task plans with progressive tracking and change record - Brought to you by microsoft/edge-ai"
     },
     {
+      "filename": "tasksync.instructions.md",
+      "applyTo": [
+        "**"
+      ],
+      "description": "TaskSync V4 - Allows you to give the agent new instructions or feedback after completing a task using terminal while agent is running."
+    },
+    {
       "filename": "terraform.instructions.md",
       "description": "Terraform Conventions and Guidelines",
       "applyTo": [
@@ -1512,6 +1524,11 @@
       "filename": "azure-resource-health-diagnose.prompt.md",
       "mode": "agent",
       "description": "Analyze Azure resource health, diagnose issues from logs and telemetry, and create a remediation plan for identified problems."
+    },
+    {
+      "filename": "boost-prompt.prompt.md",
+      "mode": "agent",
+      "description": "Interactive prompt refinement workflow: interrogates scope, deliverables, constraints; copies final markdown to clipboard; never writes code. Requires the Joyride extension."
     },
     {
       "filename": "breakdown-epic-arch.prompt.md",
