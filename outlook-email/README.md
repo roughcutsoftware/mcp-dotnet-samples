@@ -29,8 +29,8 @@ This is an MCP server that sends an email through Outlook. It also covers **auth
 
 ## Getting Started
 
-- [Registering an app on Entra ID](#registering-an-app-on-entra-id)
 - [Getting repository root](#getting-repository-root)
+- [Registering an app on Entra ID](#registering-an-app-on-entra-id)
 - [Running MCP server](#running-mcp-server)
   - [On a local machine](#on-a-local-machine)
   - [On a local machine as a Function app](#on-a-local-machine-as-a-function-app)
