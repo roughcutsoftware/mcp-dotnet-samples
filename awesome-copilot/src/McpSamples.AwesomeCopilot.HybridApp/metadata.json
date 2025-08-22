@@ -1048,6 +1048,15 @@
       ]
     },
     {
+      "filename": "azure-devops-pipelines.instructions.md",
+      "description": "Best practices for Azure DevOps Pipeline YAML files",
+      "applyTo": [
+        "**/azure-pipelines.yml",
+        "**/azure-pipelines*.yml",
+        "**/*.pipeline.yml"
+      ]
+    },
+    {
       "filename": "azure-functions-typescript.instructions.md",
       "description": "TypeScript patterns for Azure Functions",
       "applyTo": [
@@ -1716,6 +1725,19 @@
       ]
     },
     {
+      "filename": "create-github-pull-request-from-specification.prompt.md",
+      "mode": "agent",
+      "description": "Create GitHub Pull Request for feature request from specification file using pull_request_template.md template.",
+      "tools": [
+        "codebase",
+        "search",
+        "github",
+        "create_pull_request",
+        "update_pull_request",
+        "get_pull_request_diff"
+      ]
+    },
+    {
       "filename": "create-implementation-plan.prompt.md",
       "mode": "agent",
       "description": "Create a new implementation plan file for new features, refactoring existing code or upgrading packages, design, architecture or infrastructure.",
@@ -1960,8 +1982,7 @@
     },
     {
       "filename": "first-ask.prompt.md",
-      "description": "Interactive, input-tool powered, task refinement workflow: interrogates scope, deliverables, constraints before carrying out the task; Requires the Joyride extension.",
-      "mode": "agent"
+      "description": "Interactive, input-tool powered, task refinement workflow: interrogates scope, deliverables, constraints before carrying out the task; Requires the Joyride extension."
     },
     {
       "filename": "folder-structure-blueprint-generator.prompt.md",
