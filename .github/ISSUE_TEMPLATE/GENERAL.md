@@ -1,3 +1,11 @@
+---
+name: Issue in general
+about: Create an issue to help us improve
+title: ''
+labels: ''
+assignees: ''
+
+---
 <!--
 IF SUFFICIENT INFORMATION IS NOT PROVIDED VIA THE FOLLOWING TEMPLATE THE ISSUE MIGHT BE CLOSED WITHOUT FURTHER CONSIDERATION OR INVESTIGATION
 -->
