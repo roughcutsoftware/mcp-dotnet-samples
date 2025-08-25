@@ -1178,6 +1178,13 @@
       "description": "See process Copilot is following where you can edit this to reshape the interaction or save when follow up may be needed"
     },
     {
+      "filename": "csharp-ko.instructions.md",
+      "description": "C# 애플리케이션 개발을 위한 코드 작성 규칙 by @jgkim999",
+      "applyTo": [
+        "**/*.cs"
+      ]
+    },
+    {
       "filename": "csharp.instructions.md",
       "description": "Guidelines for building C# applications",
       "applyTo": [
