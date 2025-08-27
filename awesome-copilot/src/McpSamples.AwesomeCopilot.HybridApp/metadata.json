@@ -1139,6 +1139,14 @@
       ]
     },
     {
+      "filename": "clojure-memory.instructions.md",
+      "description": "Things agents tend to forget or get wrong when they are working with Clojure projects.",
+      "applyTo": [
+        "**/*.clj*",
+        "**/*.bb"
+      ]
+    },
+    {
       "filename": "cmake-vcpkg.instructions.md",
       "description": "C++ project configuration and package management",
       "applyTo": [
@@ -1645,6 +1653,11 @@
       "filename": "breakdown-test.prompt.md",
       "mode": "agent",
       "description": "Test Planning and Quality Assurance prompt that generates comprehensive test strategies, task breakdowns, and quality validation plans for GitHub projects."
+    },
+    {
+      "filename": "clojure-add-to-memory.prompt.md",
+      "description": "Have the agent update the clojure-memory.instructions.md file with mistakes it just made, or lessons learned. Also consider installing the default clojure-memory.instructions.md",
+      "title": "Clojure Memory Updater"
     },
     {
       "filename": "code-exemplars-blueprint-generator.prompt.md",
