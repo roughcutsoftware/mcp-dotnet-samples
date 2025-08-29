@@ -77,6 +77,21 @@
       "description": "Your role is that of an API architect. Help mentor the engineer by providing guidance, support, and working code."
     },
     {
+      "filename": "azure-logic-apps-expert.chatmode.md",
+      "description": "Expert guidance for Azure Logic Apps development focusing on workflow design, integration patterns, and JSON-based Workflow Definition Language.",
+      "model": "gpt-4",
+      "tools": [
+        "codebase",
+        "changes",
+        "editFiles",
+        "search",
+        "runCommands",
+        "microsoft.docs.mcp",
+        "azure_get_code_gen_best_practices",
+        "azure_query_learn"
+      ]
+    },
+    {
       "filename": "azure-principal-architect.chatmode.md",
       "description": "Provide expert Azure Principal Architect guidance using Azure Well-Architected Framework principles and Microsoft best practices.",
       "tools": [
@@ -1107,6 +1122,17 @@
         "**/*.ts",
         "**/*.js",
         "**/*.json"
+      ]
+    },
+    {
+      "filename": "azure-logic-apps-power-automate.instructions.md",
+      "description": "Guidelines for developing Azure Logic Apps and Power Automate workflows with best practices for Workflow Definition Language (WDL), integration patterns, and enterprise automation",
+      "applyTo": [
+        "**/*.json",
+        "**/*.logicapp.json",
+        "**/workflow.json",
+        "**/*-definition.json",
+        "**/*.flow.json"
       ]
     },
     {
