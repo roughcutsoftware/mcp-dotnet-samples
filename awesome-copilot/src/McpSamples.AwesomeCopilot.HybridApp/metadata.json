@@ -1721,6 +1721,11 @@
       "mode": "agent"
     },
     {
+      "filename": "create-agentsmd.prompt.md",
+      "description": "Prompt for generating an AGENTS.md file for a repository",
+      "mode": "agent"
+    },
+    {
       "filename": "create-architectural-decision-record.prompt.md",
       "mode": "agent",
       "description": "Create an Architectural Decision Record (ADR) document for AI-optimized decision documentation.",
