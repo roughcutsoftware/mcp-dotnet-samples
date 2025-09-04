@@ -17,7 +17,25 @@ With MCP, you can:
 
 This repository contains .NET samples ranging from building your own MCP implementation to integrating with Azure services.
 
+## 🔄 Understanding MCP: Servers vs Clients
+
+The Model Context Protocol (MCP) defines a standardized way for AI applications to connect to external tools and data sources. This repository demonstrates both sides of the equation:
+
+### 🔧 MCP Servers (Service Providers)
+**What they do**: Expose tools, prompts, and resources that clients can discover and use  
+**Think of them as**: REST APIs for AI applications  
+**Examples in this repo**: The server samples below that provide specific capabilities
+
+### 🤖 MCP Clients (Service Consumers)  
+**What they do**: Connect to and consume MCP servers to leverage their capabilities  
+**Think of them as**: Applications that use the REST APIs  
+**Examples**: VS Code with MCP extension, custom AI applications, chatbots
+
+---
+
 ## 📋 Sample Projects
+
+### MCP Servers
 
 | Sample Name                             | Install | Description                                                                                                             |
 |-----------------------------------------|---------|-------------------------------------------------------------------------------------------------------------------------|
@@ -26,9 +44,27 @@ This repository contains .NET samples ranging from building your own MCP impleme
 | [Outlook Email](./outlook-email/)       | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%7B%22name%22%3A%22outlook-email%22%2C%22gallery%22%3Afalse%2C%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22ghcr.io%2Fmicrosoft%2Fmcp-dotnet-samples%2Foutlook-email%3Alatest%22%5D%7D)<br/>[![Install in VS Code Insiders](https://img.shields.io/badge/VS_Code_Insiders-Install-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect?url=vscode-insiders%3Amcp%2Finstall%3F%7B%22name%22%3A%22outlook-email%22%2C%22gallery%22%3Afalse%2C%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22ghcr.io%2Fmicrosoft%2Fmcp-dotnet-samples%2Foutlook-email%3Alatest%22%5D%7D)             | MCP server that sends emails through Outlook.                                                                                   |
 | [To-do List](./todo-list/)              | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%7B%22name%22%3A%22todo-list%22%2C%22gallery%22%3Afalse%2C%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22ghcr.io%2Fmicrosoft%2Fmcp-dotnet-samples%2Ftodo-list%3Alatest%22%5D%7D)<br/>[![Install in VS Code Insiders](https://img.shields.io/badge/VS_Code_Insiders-Install-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect?url=vscode-insiders%3Amcp%2Finstall%3F%7B%22name%22%3A%22todo-list%22%2C%22gallery%22%3Afalse%2C%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22ghcr.io%2Fmicrosoft%2Fmcp-dotnet-samples%2Ftodo-list%3Alatest%22%5D%7D)                             | MCP server that manages to-do list items.                                                                                       |
 
+### MCP Clients
+
+| Sample Name                             | Description                                                                                                             |
+|-----------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| [Console Client](./mcp-client-sample/)  | Example console application showing how to build MCP clients in C# that connect to and consume the server samples above. |
+
 ## 🛠️ Getting Started
 
-Details on how to set up and run the samples will be provided in each sample's directory.
+### Building MCP Servers
+Each server sample includes detailed instructions for setup and deployment. See individual sample directories for specific requirements.
+
+### Building MCP Clients
+If you want to build applications that **consume** MCP servers (rather than provide them), check out:
+- **[How to Build MCP Clients Guide](./HOW_TO_BUILD_MCP_CLIENT.md)** - Comprehensive documentation
+- **[MCP Client Sample](./mcp-client-sample/)** - Working console application example
+
+The client sample can connect to and use any of the server samples above, demonstrating how to:
+- Discover available tools from servers
+- Invoke tools programmatically  
+- Handle authentication and errors
+- Manage multiple server connections
 
 ## 📚 Learning Resources
 
