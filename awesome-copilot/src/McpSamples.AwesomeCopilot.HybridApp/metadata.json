@@ -216,7 +216,7 @@
     {
       "filename": "blueprint-mode.chatmode.md",
       "model": "GPT-4.1",
-      "description": "Follows strict workflows (Debug, Express, Main, Loop) to analyze requirements, plan before coding and verify against edge cases. Self-corrects and favors simple, maintainable solutions."
+      "description": "Follows structured workflows (Debug, Express, Main, Loop) to plan, implement, and verify solutions. Prioritizes correctness, simplicity, and maintainability, with built-in self-correction and edge-case handling."
     },
     {
       "filename": "clojure-interactive-programming.chatmode.md",
@@ -1208,6 +1208,13 @@
       "description": "See process Copilot is following where you can edit this to reshape the interaction or save when follow up may be needed"
     },
     {
+      "filename": "csharp-ja.instructions.md",
+      "description": "C# アプリケーション構築指針 by @tsubakimoto",
+      "applyTo": [
+        "**/*.cs"
+      ]
+    },
+    {
       "filename": "csharp-ko.instructions.md",
       "description": "C# 애플리케이션 개발을 위한 코드 작성 규칙 by @jgkim999",
       "applyTo": [
@@ -1418,6 +1425,15 @@
         "java}"
       ],
       "description": "Enforces Object Calisthenics principles for business domain code to ensure clean, maintainable, and robust code"
+    },
+    {
+      "filename": "oqtane.instructions.md",
+      "description": "Oqtane Module patterns",
+      "applyTo": [
+        "**/*.razor",
+        "**/*.razor.cs",
+        "**/*.razor.css"
+      ]
     },
     {
       "filename": "performance-optimization.instructions.md",
