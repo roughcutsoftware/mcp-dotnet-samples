@@ -1208,6 +1208,20 @@
       ]
     },
     {
+      "filename": "coldfusion-cfc.instructions.md",
+      "description": "ColdFusion Coding Standards for CFC component and application patterns",
+      "applyTo": [
+        "**/*.cfc"
+      ]
+    },
+    {
+      "filename": "coldfusion-cfm.instructions.md",
+      "description": "ColdFusion cfm files and application patterns",
+      "applyTo": [
+        "**/*.cfm"
+      ]
+    },
+    {
       "filename": "containerization-docker-best-practices.instructions.md",
       "applyTo": [
         "**/Dockerfile",
